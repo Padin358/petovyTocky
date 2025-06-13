@@ -1,14 +1,9 @@
-const code1 = '2038786903'
-const code2 = '2208515018'
-const code3 = '8102138954'
-const code4 = '6705342961'
-const code5 = '5628414102'
-const code6 = '3045949295'
-const code7 = '5967363441'
-const code8 = '9769985895'
-const code9 = '6990918890'
-const code10 = '8428359773'
-const codeAdmin = '56449131019113165489841654984134816158asdf'
+console.log("1")
+
+
+import {code1, code2, code3, code4, code5, code6, code7, code8, code9, code10, codeAdmin} from "./data.js"
+
+console.log("2")
 
 let betAmnt = 5
 
@@ -34,34 +29,28 @@ let balance = 100
 
 let lastTry = false
 
-const oneBtnFun = () => {
-  betAmnt = 1
-  document.getElementById('betAmntOut').innerHTML = `Current bet amount: ${betAmnt}$`
+
+console.log(3);
+
+//TODO: Bet Amount And Buttons
+
+const betAmntBtn = (betIn) => {
+  betAmnt = betIn
+  //? Resetting all the buttons so that only one would be darker
+  document.getElementById("Btn1").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+  document.getElementById("Btn2").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+  document.getElementById("Btn5").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+  document.getElementById("Btn10").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+  document.getElementById("Btn20").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+  document.getElementById("Btn50").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+  document.getElementById("Btn100").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+
+  //? Setting the right button to be darker
+  document.getElementById(`Btn${betIn}`).classList = "bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
 }
-const twoBtnFun = () => {
-  betAmnt = 2
-  document.getElementById('betAmntOut').innerHTML = `Current bet amount: ${betAmnt}$`
-}
-const fiveBtnFun = () => {
-  betAmnt = 5
-  document.getElementById('betAmntOut').innerHTML = `Current bet amount: ${betAmnt}$`
-}
-const tenBtnFun = () => {
-  betAmnt = 10
-  document.getElementById('betAmntOut').innerHTML = `Current bet amount: ${betAmnt}$`
-}
-const twentyBtnFun = () => {
-  betAmnt = 20
-  document.getElementById('betAmntOut').innerHTML = `Current bet amount: ${betAmnt}$`
-}
-const fiftyBtnFun = () => {
-  betAmnt = 50
-  document.getElementById('betAmntOut').innerHTML = `Current bet amount: ${betAmnt}$`
-}
-const hunBtnFun = () => {
-  betAmnt = 100
-  document.getElementById('betAmntOut').innerHTML = `Current bet amount: ${betAmnt}$`
-}
+
+console.log(4);
+
 
 const slots = () => {
   if(balance >= betAmnt) {
@@ -90,6 +79,9 @@ const slots = () => {
     }
 
     tinyamount = smallamount / 4
+
+    console.log(5);
+
 
   //! Randomizer
     numOne = Math.floor(Math.random() * 10)
@@ -132,6 +124,9 @@ const slots = () => {
       tinywin = false
     }
 
+    console.log(6);
+    
+
 
     //! WIN NOTIFICATION
     if (tinywin) {
@@ -154,8 +149,6 @@ const slots = () => {
       setTimeout(() => {
         document.getElementById("winNotification").innerHTML = ""
       }, 3000);
-    } else {
-      document.getElementById('result').innerHTML = 'Sorry, you lost!'
     }
     
     if(bigwin) {
@@ -167,10 +160,9 @@ const slots = () => {
       setTimeout(() => {
         document.getElementById("winNotification").innerHTML = ""
       }, 3000);
-    } else {
-      document.getElementById('result').innerHTML = 'Sorry, you lost!'
     }
 
+    console.log(7);
     
     
 
@@ -203,6 +195,8 @@ const slots = () => {
     alert("You don't have enough money for this bet!")
   }
 
+  console.log(8);
+  
 
   //! ANIMACE - PEŤA
   if (bigwin == true || smallwin == true || tinywin == true) {
@@ -363,6 +357,9 @@ const slots = () => {
     }
   }
 
+  console.log(9);
+  
+
   if (bigwin == true || smallwin == true || tinywin == true) {
     document.getElementById("gameBox").classList = "bg-green-500 w-64 mx-auto rounded-3xl p-5 text-gray-100"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-green-700 mt-5 rounded-2xl mx-8 text-3xl"
@@ -374,6 +371,9 @@ const slots = () => {
     document.getElementById("gameBox").classList = "bg-red-500 w-64 mx-auto rounded-3xl p-5 text-gray-100"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-red-700 mt-5 rounded-2xl mx-8 text-3xl"
   }
+
+  console.log(10);
+  
 
 }
 
@@ -406,5 +406,15 @@ const submitCode = () => {
     alert("You fuckin' disgrace you can't even get a real working BalCode? Do you know how fat I am?")
   }
 
+  console.log(11);
+  
+
   document.getElementById('balance').innerHTML = `Balance: ${balance}$`
 }
+
+console.log(12);
+
+
+window.slots = slots
+window.betAmntBtn = betAmntBtn
+window.submitCode = submitCode

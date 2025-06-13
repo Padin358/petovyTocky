@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="anim.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>Peťovy točky 2.0</title>
 </head>
@@ -40,14 +39,14 @@
     <section class="bg-blue-500 rounded-3xl w-[600px] mx-auto p-4">
       <p class="text-xl text-center text-gray-100 font-bold">How much do you want to bet?</p>
       <p class="text-xl text-center text-gray-100 font-bold mb-5" id="betAmntOut">Current bet amount: 5$</p>
-      <div class="flex flex-row flex-wrap justify-center">
-        <button id="oneBtn" onclick="oneBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">1$</button>
-        <button id="twoBtn" onclick="twoBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">2$</button>
-        <button id="fiveBtn" onclick="fiveBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">5$</button>
-        <button id="tenBtn" onclick="tenBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">10$</button>
-        <button id="twentyBtn" onclick="twentyBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">20$</button>
-        <button id="fiftyBtn" onclick="fiftyBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">50$</button>
-        <button id="hunBtn" onclick="hunBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">100$</button>
+      <div class="flex flex-row flex-wrap justify-center gap-5">
+        <button id="Btn1" onclick="betAmntBtn(1)" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer">1$</button>
+        <button id="Btn2" onclick="betAmntBtn(2)" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer">2$</button>
+        <button id="Btn5" onclick="betAmntBtn(5)" class="bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer">5$</button>
+        <button id="Btn10" onclick="betAmntBtn(10)" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer">10$</button>
+        <button id="Btn20" onclick="betAmntBtn(20)" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer">20$</button>
+        <button id="Btn50" onclick="betAmntBtn(50)" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer">50$</button>
+        <button id="Btn100" onclick="betAmntBtn(100)" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer">100$</button>
       </div>
     </section>
     <br><br><br><br>
@@ -57,6 +56,6 @@
       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition" onclick="submitCode()">Submit BalCode</button>
     </section>
   </main>
-  <script src="app.js"></script>
+  <script src="./js/app.js" type="module"></script>
 </body>
 </html>
