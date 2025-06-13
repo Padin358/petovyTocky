@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="anim.css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <title>Peťovy točky</title>
+  <title>Peťovy točky 2.0</title>
 </head>
 <body class="mb-16">
   <header class="">
     <div class="flex flex-wrap flex-row justify-center gap-16 font-semibold text-lg bg-blue-500 w-1/2 mx-auto rounded-b-3xl p-3">
-      <a href="" class="underline underline-offset-4 scale-110 transition text-gray-100">Peťovy točky</a>
+      <a href="" class="underline underline-offset-4 scale-110 transition text-gray-100">Peťovy točky 2.0</a>
       <a href="" class="hover:underline underline-offset-4 hover:scale-110 transition text-gray-300 hover:text-gray-100">Večerka U <strong class="font-semibold line-through">Fíly</strong> AMOKu</a>
       <a href="" class="hover:underline underline-offset-4 hover:scale-110 transition text-gray-300 hover:text-gray-100">Peťa's gamble games</a>
     </div>
@@ -18,15 +18,15 @@
 
     </div>
     <div class="flex flex-row flex-wrap justify-center gap-5 my-22 items-center">
-      <img src="./images/peta.png" alt="" class="w-20 rounded-full animate-[spin_2s_linear_infinite]" id="peta">
-      <h1 class="text-3xl font-bold">Peťovy Točky</h1>
+      <img src="./images/peta.png" alt="" class="w-20 rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6" id="peta">
+      <h1 class="text-3xl font-bold">Peťovy Točky 2.0</h1>
     </div>
   </header>
   <main class="">
-    <section class="bg-blue-500 w-64 mx-auto rounded-3xl p-5 text-gray-100">
+    <section class="bg-blue-500 w-64 mx-auto rounded-3xl p-5 text-gray-100" id="gameBox">
       <p class="text-center text-2xl font-bold" id="balance">Balance: 100$</p>
       <section class="text-center mx-auto">
-        <div class="flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-8 text-3xl">
+        <div class="flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-8 text-3xl" id="gameNums">
           <p class="p-3" id="outOne">-</p>
           <p class="p-3" id="outTwo">-</p>
           <p class="p-3" id="outThree">-</p>
@@ -37,17 +37,17 @@
       </section>
     </section>
     <br><br><br><br><br>
-    <section>
-      <p class="text-xl text-center">How much do you want to bet?</p>
-      <p class="text-xl text-center" id="betAmntOut">Current bet amount: 5$</p>
+    <section class="bg-blue-500 rounded-3xl w-[600px] mx-auto p-4">
+      <p class="text-xl text-center text-gray-100 font-bold">How much do you want to bet?</p>
+      <p class="text-xl text-center text-gray-100 font-bold mb-5" id="betAmntOut">Current bet amount: 5$</p>
       <div class="flex flex-row flex-wrap justify-center">
-        <button id="oneBtn" onclick="oneBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">1$</button>
-        <button id="twoBtn" onclick="twoBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">2$</button>
-        <button id="fiveBtn" onclick="fiveBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">5$</button>
-        <button id="tenBtn" onclick="tenBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">10$</button>
-        <button id="twentyBtn" onclick="twentyBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">20$</button>
-        <button id="fiftyBtn" onclick="fiftyBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">50$</button>
-        <button id="hunBtn" onclick="hunBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">100$</button>
+        <button id="oneBtn" onclick="oneBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">1$</button>
+        <button id="twoBtn" onclick="twoBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">2$</button>
+        <button id="fiveBtn" onclick="fiveBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">5$</button>
+        <button id="tenBtn" onclick="tenBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">10$</button>
+        <button id="twentyBtn" onclick="twentyBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">20$</button>
+        <button id="fiftyBtn" onclick="fiftyBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">50$</button>
+        <button id="hunBtn" onclick="hunBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-2 rounded-md transition">100$</button>
       </div>
     </section>
     <br><br><br><br>

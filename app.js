@@ -215,7 +215,7 @@ const slots = () => {
         if (w <= 20) direction = 1;
 
         w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
       }, 30)
       setTimeout(() => {
         clearInterval(win1Anim)
@@ -225,7 +225,7 @@ const slots = () => {
           } else {
             clearInterval(win1Closing)
           }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
         }, 30);
       }, 2000)
     } else if (betAmnt == 2) {
@@ -237,7 +237,7 @@ const slots = () => {
         if (w <= 20) direction = 1;
 
         w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
       }, 20)
       setTimeout(() => {
         clearInterval(win2Anim)
@@ -247,7 +247,7 @@ const slots = () => {
           } else {
             clearInterval(win2Closing)
           }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
         }, 20);
       }, 2000)
     } else if (betAmnt == 5) {
@@ -259,7 +259,7 @@ const slots = () => {
         if (w <= 20) direction = 1;
 
         w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
       }, 20)
       setTimeout(() => {
         clearInterval(win5Anim)
@@ -269,7 +269,7 @@ const slots = () => {
           } else {
             clearInterval(win5Closing)
           }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
         }, 20);
       }, 2000)
     } else if (betAmnt == 10) {
@@ -281,7 +281,7 @@ const slots = () => {
         if (w <= 20) direction = 1;
 
         w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
       }, 20)
       setTimeout(() => {
         clearInterval(win10Anim)
@@ -291,7 +291,7 @@ const slots = () => {
           } else {
             clearInterval(win10Closing)
           }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
         }, 20);
       }, 2000)
     } else if (betAmnt == 20) {
@@ -303,7 +303,7 @@ const slots = () => {
         if (w <= 20) direction = 1;
 
         w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
       }, 20)
       setTimeout(() => {
         clearInterval(win20Anim)
@@ -313,7 +313,7 @@ const slots = () => {
           } else {
             clearInterval(win20Closing)
           }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
         }, 20);
       }, 2000)
     } else if (betAmnt == 50) {
@@ -325,7 +325,7 @@ const slots = () => {
         if (w <= 20) direction = 1;
 
         w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
       }, 20)
       setTimeout(() => {
         clearInterval(win50Anim)
@@ -335,7 +335,7 @@ const slots = () => {
           } else {
             clearInterval(win50Closing)
           }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
         }, 20);
       }, 2000)
     } else if (betAmnt == 100) {
@@ -347,7 +347,7 @@ const slots = () => {
         if (w <= 80) direction = 5;
 
         w += direction;
-        document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite]`;
+        document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
       }, 10)
       setTimeout(() => {
         clearInterval(win100Anim)
@@ -357,10 +357,22 @@ const slots = () => {
           } else {
             clearInterval(win100Closing)
           }
-          document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite]`;
+          document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
         }, 10);
       }, 10000)
     }
+  }
+
+  if (bigwin == true || smallwin == true || tinywin == true) {
+    document.getElementById("gameBox").classList = "bg-green-500 w-64 mx-auto rounded-3xl p-5 text-gray-100"
+    document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-green-700 mt-5 rounded-2xl mx-8 text-3xl"
+    setTimeout(() => {
+      document.getElementById("gameBox").classList = "bg-blue-500 w-64 mx-auto rounded-3xl p-5 text-gray-100"
+      document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-8 text-3xl"
+    }, 3000);
+  } else {
+    document.getElementById("gameBox").classList = "bg-red-500 w-64 mx-auto rounded-3xl p-5 text-gray-100"
+    document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-red-700 mt-5 rounded-2xl mx-8 text-3xl"
   }
 
 }
@@ -375,27 +387,23 @@ const submitCode = () => {
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 100
-  }
-
-  if (codeIn === code5 || codeIn === code6 || codeIn === code7 || codeIn === code8) {
+  } else if (codeIn === code5 || codeIn === code6 || codeIn === code7 || codeIn === code8) {
     alert("Congratulations! You entered the correct code!\n\nYou're now getting $300!")
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 200
-  }
-
-  if (codeIn === code9 || codeIn === code10) {
+  } else if (codeIn === code9 || codeIn === code10) {
     alert("Congratulations! You entered the correct code!\n\nYou're now getting $300!")
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 300
-  }
-
-  if (codeIn === codeAdmin) {
+  } else if (codeIn === codeAdmin) {
     alert("Good morning ADMIN! You entered the correct Admin code designed for testing purposes only!\n\nYou're now getting $900.000!")
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 900000
+  } else {
+    alert("You fuckin' disgrace you can't even get a real working BalCode? Do you know how fat I am?")
   }
 
   document.getElementById('balance').innerHTML = `Balance: ${balance}$`
