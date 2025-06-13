@@ -8,6 +8,7 @@ const code7 = '5967363441'
 const code8 = '9769985895'
 const code9 = '6990918890'
 const code10 = '8428359773'
+const codeAdmin = '56449131019113165489841654984134816158asdf'
 
 let betAmnt = 5
 
@@ -320,8 +321,8 @@ const slots = () => {
       let direction = 1;
 
       const win100Anim = setInterval(() => {
-        if (w >= 600) direction = -3;
-        if (w <= 80) direction = 3;
+        if (w >= 600) direction = -5;
+        if (w <= 80) direction = 5;
 
         w += direction;
         document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite]`;
@@ -330,7 +331,7 @@ const slots = () => {
         clearInterval(win100Anim)
         const win100Closing = setInterval(() => {
           if (w > 80) {
-            w += -1
+            w += -5
           } else {
             clearInterval(win100Closing)
           }
@@ -348,24 +349,31 @@ const submitCode = () => {
   codeIn = document.getElementById('code').value
 
   if (codeIn === code1 || codeIn === code2 || codeIn === code3 || codeIn === code4) {
-    alert('Congratulations! You entered the correct code!')
+    alert("Congratulations! You entered the correct code!\n\nYou're now getting $300!")
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 100
   }
 
   if (codeIn === code5 || codeIn === code6 || codeIn === code7 || codeIn === code8) {
-    alert('Congratulations! You entered the correct code!')
+    alert("Congratulations! You entered the correct code!\n\nYou're now getting $300!")
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 200
   }
 
   if (codeIn === code9 || codeIn === code10) {
-    alert('Congratulations! You entered the correct code!')
+    alert("Congratulations! You entered the correct code!\n\nYou're now getting $300!")
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 300
+  }
+
+  if (codeIn === codeAdmin) {
+    alert("Good morning ADMIN! You entered the correct Admin code designed for testing purposes only!\n\nYou're now getting $900.000!")
+    document.getElementById('code').value = ''
+    document.getElementById('btn').disabled = false
+    balance += 900000
   }
 
   document.getElementById('balance').innerHTML = `Balance: ${balance}$`
