@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="added.css">
+  <!--! npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
+  <title>Peťovy točky</title>
+</head>
+<body class="idk">
+  <main class="">
+    <p class="text-center text-2xl font-bold" id="balance">Balance: 100$</p>
+    <section class="text-center mx-auto">
+      <div class="flex flex-wrap flex-row justify-center text-xl font-semibold">
+        <p class="float-left p-5" id="outOne">-</p>
+        <p class="float-left p-5" id="outTwo">-</p>
+        <p class="float-left p-5" id="outThree">-</p>
+        <div class="clear-both"></div>
+      </div>
+      <p class="" id="result">‎</p>
+      <button id="btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition" onclick="slots()">Play</button>
+    </section>
+
+    <br><br><br><br><br>
+    <section>
+      <p class="text-xl text-center">How much do you want to bet?</p>
+      <p class="text-xl text-center" id="betAmntOut">Current bet amount: 5$</p>
+      <div class="flex flex-row flex-wrap justify-center">
+        <button id="oneBtn" onclick="oneBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">1$</button>
+        <button id="twoBtn" onclick="twoBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">2$</button>
+        <button id="fiveBtn" onclick="fiveBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">5$</button>
+        <button id="tenBtn" onclick="tenBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">10$</button>
+        <button id="twentyBtn" onclick="twentyBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">20$</button>
+        <button id="fiftyBtn" onclick="fiftyBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">50$</button>
+        <button id="hunBtn" onclick="hunBtnFun()" class="mx-5 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition">100$</button>
+      </div>
+    </section>
+    <br><br><br><br>
+    <section class="mx-auto w-2/5 text-center">
+      <p class="mx-0 sm:mx-5 md:mx-10 lg:mx-16 xl:mx-20">You ran out of money? Well don't be sad! Just get a code - we call it a BalCode - fill it in, and submit. Voila, now you got more money!</p>
+      <input type="text" placeholder="BalCode" class="bg-blue-300 p-1 rounded-md mx-5 text-white w-32 md:w-64 xl:w-96" id="code">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition" onclick="submitCode()">Submit BalCode</button>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
