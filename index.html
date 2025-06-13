@@ -7,10 +7,15 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>Peťovy točky</title>
 </head>
-<body class="idk">
+<body class="mb-16">
   <header class="">
-    <div class="fixed top-10 right-10 border-l-6 border-blue-600 w-64 p-5 rounded-xl bg-gray-200 text-center align-middle text-2xl font-semibold text-blue-900">
-      You won $3000!
+    <div class="flex flex-wrap flex-row justify-center gap-16 font-semibold text-lg bg-blue-500 w-1/2 mx-auto rounded-b-3xl p-3">
+      <a href="" class="underline underline-offset-4 scale-110 transition text-gray-100">Peťovy točky</a>
+      <a href="" class="hover:underline underline-offset-4 hover:scale-110 transition text-gray-300 hover:text-gray-100">Večerka U <strong class="font-semibold line-through">Fíly</strong> AMOKu</a>
+      <a href="" class="hover:underline underline-offset-4 hover:scale-110 transition text-gray-300 hover:text-gray-100">Peťa's gamble games</a>
+    </div>
+    <div class="" id="winNotification">
+
     </div>
     <div class="flex flex-row flex-wrap justify-center gap-5 my-22 items-center">
       <img src="./images/peta.png" alt="" class="w-20 rounded-full animate-[spin_2s_linear_infinite]" id="peta">
@@ -18,18 +23,19 @@
     </div>
   </header>
   <main class="">
-    <p class="text-center text-2xl font-bold" id="balance">Balance: 100$</p>
-    <section class="text-center mx-auto">
-      <div class="flex flex-wrap flex-row justify-center text-xl font-semibold">
-        <p class="float-left p-5" id="outOne">-</p>
-        <p class="float-left p-5" id="outTwo">-</p>
-        <p class="float-left p-5" id="outThree">-</p>
-        <div class="clear-both"></div>
-      </div>
-      <p class="" id="result">‎</p>
-      <button id="btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition" onclick="slots()">Play</button>
+    <section class="bg-blue-500 w-64 mx-auto rounded-3xl p-5 text-gray-100">
+      <p class="text-center text-2xl font-bold" id="balance">Balance: 100$</p>
+      <section class="text-center mx-auto">
+        <div class="flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-8 text-3xl">
+          <p class="p-3" id="outOne">-</p>
+          <p class="p-3" id="outTwo">-</p>
+          <p class="p-3" id="outThree">-</p>
+        </div>
+        <p class="my-2" id="result">‎</p>
+        <button id="btn" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer" onclick="slots()">Play</button>
+        
+      </section>
     </section>
-
     <br><br><br><br><br>
     <section>
       <p class="text-xl text-center">How much do you want to bet?</p>

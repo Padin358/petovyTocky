@@ -1,4 +1,4 @@
-  const code1 = '2038786903'
+const code1 = '2038786903'
 const code2 = '2208515018'
 const code3 = '8102138954'
 const code4 = '6705342961'
@@ -65,7 +65,7 @@ const hunBtnFun = () => {
 
 const slots = () => {
   if(balance >= betAmnt) {
-      // Win amount
+      //! Win amount
     if (betAmnt === 1) {
       smallamount = 10
       bigamount = 30
@@ -91,7 +91,7 @@ const slots = () => {
 
     tinyamount = smallamount / 4
 
-  // Randomizer
+  //! Randomizer
     numOne = Math.floor(Math.random() * 10)
     numTwo = Math.floor(Math.random() * 10)
     numThree = Math.floor(Math.random() * 10)
@@ -109,7 +109,7 @@ const slots = () => {
     lastTry = false
   }
 
-    // BigWin
+    //! BigWin
     if(numOne === numTwo && numTwo === numThree) {
       bigwin = true
     } else if(numOne === numThree) {
@@ -132,21 +132,41 @@ const slots = () => {
       tinywin = false
     }
 
+
+    //! WIN NOTIFICATION
     if (tinywin) {
-      document.getElementById('result').innerHTML = 'Congratulations! You won!'
-      alert(`You just won ${tinyamount}$!`)
+      document.getElementById("winNotification").innerHTML = `
+      <div class="fixed top-10 right-10 border-l-6 border-blue-600 w-64 p-5 rounded-xl bg-gray-200 text-center align-middle text-2xl font-semibold text-blue-900 animate-bounce">
+        You won ${tinyamount}$!
+      </div>
+      `
+      setTimeout(() => {
+        document.getElementById("winNotification").innerHTML = ""
+      }, 3000);
     }
 
     if(smallwin) {
-      document.getElementById('result').innerHTML = 'Congratulations! You won!'
-      alert(`You won just about ${smallamount}$!`)
+      document.getElementById("winNotification").innerHTML = `
+      <div class="fixed top-10 right-10 border-l-6 border-blue-600 w-64 p-5 rounded-xl bg-gray-200 text-center align-middle text-2xl font-semibold text-blue-900 animate-bounce">
+        You won ${smallamount}$!
+      </div>
+      `
+      setTimeout(() => {
+        document.getElementById("winNotification").innerHTML = ""
+      }, 3000);
     } else {
       document.getElementById('result').innerHTML = 'Sorry, you lost!'
     }
     
     if(bigwin) {
-      document.getElementById('result').innerHTML = 'Congratulations! You won!'
-      alert(`You just won ${bigamount}$!`)
+      document.getElementById("winNotification").innerHTML = `
+      <div class="fixed top-10 right-10 border-l-6 border-blue-600 w-64 p-5 rounded-xl bg-gray-200 text-center align-middle text-2xl font-semibold text-blue-900 animate-bounce">
+        You won ${bigamount}$!
+      </div>
+      `
+      setTimeout(() => {
+        document.getElementById("winNotification").innerHTML = ""
+      }, 3000);
     } else {
       document.getElementById('result').innerHTML = 'Sorry, you lost!'
     }
@@ -183,6 +203,8 @@ const slots = () => {
     alert("You don't have enough money for this bet!")
   }
 
+
+  //! ANIMACE - PEŤA
   if (bigwin == true || smallwin == true || tinywin == true) {
     if(betAmnt == 1) {
       let w = 20;
@@ -344,7 +366,7 @@ const slots = () => {
 }
 
 
-//? Kódy
+//! Kódy
 const submitCode = () => {
   codeIn = document.getElementById('code').value
 
