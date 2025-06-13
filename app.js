@@ -1,4 +1,4 @@
-const code1 = '2038786903'
+  const code1 = '2038786903'
 const code2 = '2208515018'
 const code3 = '8102138954'
 const code4 = '6705342961'
@@ -181,6 +181,165 @@ const slots = () => {
   } else {
     alert("You don't have enough money for this bet!")
   }
+
+  if (bigwin == true || smallwin == true || tinywin == true) {
+    if(betAmnt == 1) {
+      let w = 20;
+      let direction = 1;
+
+      const win1Anim = setInterval(() => {
+        if (w >= 32) direction = -1;
+        if (w <= 20) direction = 1;
+
+        w += direction;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+      }, 30)
+      setTimeout(() => {
+        clearInterval(win1Anim)
+        const win1Closing = setInterval(() => {
+          if (w > 20) {
+            w += -1
+          } else {
+            clearInterval(win1Closing)
+          }
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        }, 30);
+      }, 2000)
+    } else if (betAmnt == 2) {
+      let w = 20;
+      let direction = 1;
+
+      const win2Anim = setInterval(() => {
+        if (w >= 48) direction = -1;
+        if (w <= 20) direction = 1;
+
+        w += direction;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+      }, 20)
+      setTimeout(() => {
+        clearInterval(win2Anim)
+        const win2Closing = setInterval(() => {
+          if (w > 20) {
+            w += -1
+          } else {
+            clearInterval(win2Closing)
+          }
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        }, 20);
+      }, 2000)
+    } else if (betAmnt == 5) {
+      let w = 20;
+      let direction = 1;
+
+      const win5Anim = setInterval(() => {
+        if (w >= 52) direction = -1;
+        if (w <= 20) direction = 1;
+
+        w += direction;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+      }, 20)
+      setTimeout(() => {
+        clearInterval(win5Anim)
+        const win5Closing = setInterval(() => {
+          if (w > 20) {
+            w += -1
+          } else {
+            clearInterval(win5Closing)
+          }
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        }, 20);
+      }, 2000)
+    } else if (betAmnt == 10) {
+      let w = 20;
+      let direction = 1;
+
+      const win10Anim = setInterval(() => {
+        if (w >= 64) direction = -1;
+        if (w <= 20) direction = 1;
+
+        w += direction;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+      }, 20)
+      setTimeout(() => {
+        clearInterval(win10Anim)
+        const win10Closing = setInterval(() => {
+          if (w > 20) {
+            w += -1
+          } else {
+            clearInterval(win10Closing)
+          }
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        }, 20);
+      }, 2000)
+    } else if (betAmnt == 20) {
+      let w = 20;
+      let direction = 1;
+
+      const win20Anim = setInterval(() => {
+        if (w >= 72) direction = -1;
+        if (w <= 20) direction = 1;
+
+        w += direction;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+      }, 20)
+      setTimeout(() => {
+        clearInterval(win20Anim)
+        const win20Closing = setInterval(() => {
+          if (w > 20) {
+            w += -1
+          } else {
+            clearInterval(win20Closing)
+          }
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        }, 20);
+      }, 2000)
+    } else if (betAmnt == 50) {
+      let w = 20;
+      let direction = 1;
+
+      const win50Anim = setInterval(() => {
+        if (w >= 84) direction = -1;
+        if (w <= 20) direction = 1;
+
+        w += direction;
+        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+      }, 20)
+      setTimeout(() => {
+        clearInterval(win50Anim)
+        const win50Closing = setInterval(() => {
+          if (w > 20) {
+            w += -1
+          } else {
+            clearInterval(win50Closing)
+          }
+          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite]`;
+        }, 20);
+      }, 2000)
+    } else if (betAmnt == 100) {
+      let w = 80;
+      let direction = 1;
+
+      const win100Anim = setInterval(() => {
+        if (w >= 600) direction = -3;
+        if (w <= 80) direction = 3;
+
+        w += direction;
+        document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite]`;
+      }, 10)
+      setTimeout(() => {
+        clearInterval(win100Anim)
+        const win100Closing = setInterval(() => {
+          if (w > 80) {
+            w += -1
+          } else {
+            clearInterval(win100Closing)
+          }
+          document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite]`;
+        }, 10);
+      }, 10000)
+    }
+  }
+
 }
 
 

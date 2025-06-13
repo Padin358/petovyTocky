@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="output.css">
-  <link rel="stylesheet" href="added.css">
-  <!--! npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
+  <link rel="stylesheet" href="anim.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <title>Peťovy točky</title>
 </head>
 <body class="idk">
+  <header class="">
+    <div class="flex flex-row flex-wrap justify-center gap-5 my-22 items-center">
+      <img src="./images/peta.png" alt="" class="w-20 rounded-full animate-[spin_2s_linear_infinite]" id="peta">
+      <h1 class="text-3xl font-bold">Peťovy Točky</h1>
+    </div>
+  </header>
   <main class="">
     <p class="text-center text-2xl font-bold" id="balance">Balance: 100$</p>
     <section class="text-center mx-auto">
