@@ -1,9 +1,10 @@
-console.log("1")
-
-
-import {code1, code2, code3, code4, code5, code6, code7, code8, code9, code10, codeAdmin} from "./data.js"
+import {code1, code2, code3, code4, code5, code6, code7, code8, code9, code10, codeAdmin, emojis} from "./data.js"
 
 console.log("2")
+
+const oneOut = document.getElementById("oneOut")
+const twoOut = document.getElementById("twoOut")
+const threeOut = document.getElementById("threeOut")
 
 let betAmnt = 5
 
@@ -70,7 +71,6 @@ const winAnimation = (max, min, speed, time) => {
   }, time);
 }
 
-console.log(4);
 
 
 const slots = () => {
@@ -109,9 +109,9 @@ const slots = () => {
     numTwo = Math.floor(Math.random() * 10)
     numThree = Math.floor(Math.random() * 10)
 
-    outOne = document.getElementById('outOne').innerHTML = numOne
-    outTwo = document.getElementById('outTwo').innerHTML = numTwo
-    outThree = document.getElementById('outThree').innerHTML = numThree
+    oneOut.innerText = emojis[numOne]
+    twoOut.innerText = emojis[numTwo]
+    threeOut.innerText = emojis[numThree]
 
   if(balance <= 0) {
     alert('You ran out of money! Game over.')
@@ -262,14 +262,14 @@ const slots = () => {
   
 
   if (bigwin == true || smallwin == true || tinywin == true) {
-    document.getElementById("gameBox").classList = "bg-green-500 w-64 mx-auto rounded-3xl p-5 text-gray-100"
+    document.getElementById("gameBox").classList = "bg-green-500 w-92 mx-auto rounded-3xl p-5 text-gray-100"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-green-700 mt-5 rounded-2xl mx-8 text-3xl"
     setTimeout(() => {
-      document.getElementById("gameBox").classList = "bg-blue-500 w-64 mx-auto rounded-3xl p-5 text-gray-100"
+      document.getElementById("gameBox").classList = "bg-blue-500 w-92 mx-auto rounded-3xl p-5 text-gray-100"
       document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-8 text-3xl"
     }, 3000);
   } else {
-    document.getElementById("gameBox").classList = "bg-red-500 w-64 mx-auto rounded-3xl p-5 text-gray-100"
+    document.getElementById("gameBox").classList = "bg-red-500 w-92 mx-auto rounded-3xl p-5 text-gray-100"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-red-700 mt-5 rounded-2xl mx-8 text-3xl"
   }
 
