@@ -29,9 +29,6 @@ let balance = 100
 
 let lastTry = false
 
-
-console.log(3);
-
 //TODO: Bet Amount And Buttons
 
 const betAmntBtn = (betIn) => {
@@ -47,6 +44,30 @@ const betAmntBtn = (betIn) => {
 
   //? Setting the right button to be darker
   document.getElementById(`Btn${betIn}`).classList = "bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+}
+
+const winAnimation = (max, min, speed, time) => {
+  let w = 20
+  let dir
+  const winAnim = setInterval(() => {
+    if (w >= max) dir = -1
+    if (w <= min) dir = 1
+
+    w += dir * speed
+
+    document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`
+  }, 30);
+  setTimeout(() => {
+    clearInterval(winAnim)
+    const closingAnim = setInterval(() => {
+      if (w > 20) {
+        dir = -1
+        w += dir * speed
+      } else { clearInterval(closingAnim) }
+
+      document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
+    }, 30);
+  }, time);
 }
 
 console.log(4);
@@ -201,137 +222,17 @@ const slots = () => {
   //! ANIMACE - PEŤA
   if (bigwin == true || smallwin == true || tinywin == true) {
     if(betAmnt == 1) {
-      let w = 20;
-      let direction = 1;
-
-      const win1Anim = setInterval(() => {
-        if (w >= 32) direction = -1;
-        if (w <= 20) direction = 1;
-
-        w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-      }, 30)
-      setTimeout(() => {
-        clearInterval(win1Anim)
-        const win1Closing = setInterval(() => {
-          if (w > 20) {
-            w += -1
-          } else {
-            clearInterval(win1Closing)
-          }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-        }, 30);
-      }, 2000)
+      winAnimation(32, 20, 1, 2000)
     } else if (betAmnt == 2) {
-      let w = 20;
-      let direction = 1;
-
-      const win2Anim = setInterval(() => {
-        if (w >= 48) direction = -1;
-        if (w <= 20) direction = 1;
-
-        w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-      }, 20)
-      setTimeout(() => {
-        clearInterval(win2Anim)
-        const win2Closing = setInterval(() => {
-          if (w > 20) {
-            w += -1
-          } else {
-            clearInterval(win2Closing)
-          }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-        }, 20);
-      }, 2000)
+      winAnimation(48, 20, 1, 2000)
     } else if (betAmnt == 5) {
-      let w = 20;
-      let direction = 1;
-
-      const win5Anim = setInterval(() => {
-        if (w >= 52) direction = -1;
-        if (w <= 20) direction = 1;
-
-        w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-      }, 20)
-      setTimeout(() => {
-        clearInterval(win5Anim)
-        const win5Closing = setInterval(() => {
-          if (w > 20) {
-            w += -1
-          } else {
-            clearInterval(win5Closing)
-          }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-        }, 20);
-      }, 2000)
+      winAnimation(54, 20, 2, 2000)
     } else if (betAmnt == 10) {
-      let w = 20;
-      let direction = 1;
-
-      const win10Anim = setInterval(() => {
-        if (w >= 64) direction = -1;
-        if (w <= 20) direction = 1;
-
-        w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-      }, 20)
-      setTimeout(() => {
-        clearInterval(win10Anim)
-        const win10Closing = setInterval(() => {
-          if (w > 20) {
-            w += -1
-          } else {
-            clearInterval(win10Closing)
-          }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-        }, 20);
-      }, 2000)
+      winAnimation(64, 20, 3, 2000)
     } else if (betAmnt == 20) {
-      let w = 20;
-      let direction = 1;
-
-      const win20Anim = setInterval(() => {
-        if (w >= 72) direction = -1;
-        if (w <= 20) direction = 1;
-
-        w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-      }, 20)
-      setTimeout(() => {
-        clearInterval(win20Anim)
-        const win20Closing = setInterval(() => {
-          if (w > 20) {
-            w += -1
-          } else {
-            clearInterval(win20Closing)
-          }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-        }, 20);
-      }, 2000)
+      winAnimation(72, 20, 3, 2000)
     } else if (betAmnt == 50) {
-      let w = 20;
-      let direction = 1;
-
-      const win50Anim = setInterval(() => {
-        if (w >= 84) direction = -1;
-        if (w <= 20) direction = 1;
-
-        w += direction;
-        document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-      }, 20)
-      setTimeout(() => {
-        clearInterval(win50Anim)
-        const win50Closing = setInterval(() => {
-          if (w > 20) {
-            w += -1
-          } else {
-            clearInterval(win50Closing)
-          }
-          document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
-        }, 20);
-      }, 2000)
+      winAnimation(84, 20, 3, 2000)
     } else if (betAmnt == 100) {
       let w = 80;
       let direction = 1;
