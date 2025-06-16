@@ -1,0 +1,10 @@
+#helpDiv {
+  position: absolute;
+  top: 0;
+  left: -250px; /* hidden by default */
+  transition: left 1s ease-in-out; /* smooth in/out */
+}
+
+#helpDiv.open {
+  left: 0; /* visible when open */
+}

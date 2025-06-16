@@ -66,7 +66,7 @@ const winAnimation = (max, min, speed, time) => {
         w += dir * speed
       } else { clearInterval(closingAnim) }
 
-      document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
+      document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`
     }, 30);
   }, time);
 }
@@ -75,7 +75,7 @@ const winAnimation = (max, min, speed, time) => {
 
 const slots = () => {
   if(balance >= betAmnt) {
-      //! Win amount
+    //! Win amount
     if (betAmnt === 1) {
       smallamount = 10
       bigamount = 30
@@ -99,9 +99,7 @@ const slots = () => {
       bigamount = 3000
     }
 
-    tinyamount = smallamount / 4
-
-    console.log(5);
+    tinyamount = smallamount / 2
 
 
   //! Randomizer
@@ -113,7 +111,7 @@ const slots = () => {
     twoOut.innerText = emojis[numTwo]
     threeOut.innerText = emojis[numThree]
 
-  if(balance <= 0) {
+  if(balance == 0 || balance < betAmnt) {
     alert('You ran out of money! Game over.')
     document.getElementById('balance').innerHTML = 'Game over!'
     document.getElementById('btn').disabled = true
@@ -123,31 +121,17 @@ const slots = () => {
   }
 
     //! BigWin
-    if(numOne === numTwo && numTwo === numThree) {
+    if (numOne == 0 && numTwo == 0 && numThree == 0) {
       bigwin = true
-    } else if(numOne === numThree) {
-      if(bigwin === false) {
-        if(numOne === 1 || numOne === 3 ||numOne === 5 || numOne === 7 || numOne === 9) {
-          smallwin = true
-        }else if(numOne === 0 ||numOne === 2 || numOne === 4 ||numOne === 6 || numOne === 8) {
-          smallwin = false
-        }
-      } else {
-        smallwin = false
-      }
-    } else if(numOne === numTwo && numOne === 6 && numTwo === 6) {
-      tinywin = true
-    } else if(numTwo === numThree && numTwo === 5 && numThree === 5) {
+    } else if (numOne == 2 && numTwo == 2 && numThree == 2) {
+      smallwin = true
+    } else if ((numOne == 2 && numThree == 2) || (numOne == 2 && numTwo == 2) || (numTwo == 2 && numThree == 2)) {
       tinywin = true
     } else {
-      smallwin = false
       bigwin = false
+      smallwin = false
       tinywin = false
     }
-
-    console.log(6);
-    
-
 
     //! WIN NOTIFICATION
     if (tinywin) {
@@ -199,7 +183,7 @@ const slots = () => {
 
     document.getElementById('balance').innerHTML = `Balance: ${balance}$`
 
-    if(balance <= betAmnt && balance > 0) {
+    if(balance >= betAmnt && balance < betAmnt*2) {
       lastTry = true
     }
 
@@ -221,6 +205,7 @@ const slots = () => {
 
   //! ANIMACE - PEŤA
   if (bigwin == true || smallwin == true || tinywin == true) {
+
     if(betAmnt == 1) {
       winAnimation(32, 20, 1, 2000)
     } else if (betAmnt == 2) {
@@ -261,7 +246,7 @@ const slots = () => {
   console.log(9);
   
 
-  if (bigwin == true || smallwin == true || tinywin == true) {
+  if (bigwin || smallwin || tinywin) {
     document.getElementById("gameBox").classList = "bg-green-500 w-92 mx-auto rounded-3xl p-5 text-gray-100"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-green-700 mt-5 rounded-2xl mx-8 text-3xl"
     setTimeout(() => {
@@ -272,10 +257,6 @@ const slots = () => {
     document.getElementById("gameBox").classList = "bg-red-500 w-92 mx-auto rounded-3xl p-5 text-gray-100"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-red-700 mt-5 rounded-2xl mx-8 text-3xl"
   }
-
-  console.log(10);
-  
-
 }
 
 
