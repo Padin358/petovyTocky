@@ -247,16 +247,52 @@ const slots = () => {
   
 
   if (bigwin || smallwin || tinywin) {
-    document.getElementById("gameBox").classList = "bg-green-500 w-92 mx-auto rounded-3xl p-5 text-gray-100"
+    document.getElementById("gameBox").classList = "bg-green-500 q-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-green-700 mt-5 rounded-2xl mx-8 text-3xl"
     setTimeout(() => {
-      document.getElementById("gameBox").classList = "bg-blue-500 w-92 mx-auto rounded-3xl p-5 text-gray-100"
+      document.getElementById("gameBox").classList = "bg-blue-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100"
       document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-8 text-3xl"
     }, 3000);
   } else {
-    document.getElementById("gameBox").classList = "bg-red-500 w-92 mx-auto rounded-3xl p-5 text-gray-100"
+    document.getElementById("gameBox").classList = "bg-red-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-red-700 mt-5 rounded-2xl mx-8 text-3xl"
   }
+}
+
+let autoSwitch = 0
+
+const autoSpin = () => {
+  switch (autoSwitch) {
+    case 0:
+      autoSwitch = 1
+      document.getElementById("autoBtn").classList = "bg-amber-500 bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+
+      const spin = () => {
+        if (autoSwitch == 0) return
+
+        if (balance < betAmnt) {
+          console.log("Konec: Nedostatek peněz!");
+          return
+        }
+
+        slots()
+
+        if (lastTry) return
+
+        let pauseTime = 500
+
+        if (bigwin || smallwin || tinywin) {
+          pauseTime = 5000
+        }
+
+        setTimeout(spin, pauseTime)
+      };
+
+      spin(); 
+    case 1:
+      autoSwitch = 0
+      document.getElementById("autoBtn").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+    }
 }
 
 
@@ -294,9 +330,8 @@ const submitCode = () => {
   document.getElementById('balance').innerHTML = `Balance: ${balance}$`
 }
 
-console.log(12);
-
 
 window.slots = slots
 window.betAmntBtn = betAmntBtn
 window.submitCode = submitCode
+window.autoSpin = autoSpin

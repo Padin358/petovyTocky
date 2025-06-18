@@ -1,6 +1,5 @@
 #helpDiv {
   position: absolute;
-  top: 0;
   left: -200px; /* hidden by default */
   transition: left 1s ease-in-out; /* smooth in/out */
 }
