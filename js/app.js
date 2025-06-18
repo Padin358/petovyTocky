@@ -181,21 +181,11 @@ const slots = () => {
 
     balance -= betAmnt
 
-    document.getElementById('balance').innerHTML = `Balance: ${balance}$`
-
     if(balance >= betAmnt && balance < betAmnt*2) {
       lastTry = true
     }
 
-    if(lastTry) {
-      alert('Last try!')
-    }
 
-    if(balance <= 0) {
-      alert('Game over! You lost all your money.')
-      document.getElementById('btn').disabled = true
-      document.getElementById('result').innerHTML = "Game over!"
-    }
   } else {
     alert("You don't have enough money for this bet!")
   }
@@ -247,16 +237,17 @@ const slots = () => {
   
 
   if (bigwin || smallwin || tinywin) {
-    document.getElementById("gameBox").classList = "bg-green-500 q-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100"
+    document.getElementById("gameBox").classList = "bg-green-500 q-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-150"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-green-700 mt-5 rounded-2xl mx-8 text-3xl"
     setTimeout(() => {
-      document.getElementById("gameBox").classList = "bg-blue-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100"
+      document.getElementById("gameBox").classList = "bg-blue-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-150"
       document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-8 text-3xl"
     }, 3000);
   } else {
-    document.getElementById("gameBox").classList = "bg-red-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100"
+    document.getElementById("gameBox").classList = "bg-red-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-150"
     document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-red-700 mt-5 rounded-2xl mx-8 text-3xl"
   }
+  document.getElementById('balance').innerHTML = `Balance: ${balance}$`
 }
 
 let autoSwitch = 0
@@ -271,27 +262,35 @@ const autoSpin = () => {
         if (autoSwitch == 0) return
 
         if (balance < betAmnt) {
-          console.log("Konec: Nedostatek peněz!");
+          autoSwitch = 0
+          document.getElementById("autoBtn").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
           return
         }
 
         slots()
 
-        if (lastTry) return
+        if (lastTry) {
+          autoSwitch = 0
+          document.getElementById("autoBtn").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+          return
+        }
 
-        let pauseTime = 500
+        let pauseTime = 100
 
         if (bigwin || smallwin || tinywin) {
           pauseTime = 5000
+          if(betAmnt == 100) pauseTime = 10000
         }
 
         setTimeout(spin, pauseTime)
       };
 
       spin(); 
+      break
     case 1:
       autoSwitch = 0
       document.getElementById("autoBtn").classList = "bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition cursor-pointer"
+      break
     }
 }
 
