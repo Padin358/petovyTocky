@@ -1,7 +1,5 @@
 import {code1, code2, code3, code4, code5, code6, code7, code8, code9, code10, codeAdmin, emojis} from "./data.js"
 
-console.log("2")
-
 const oneOut = document.getElementById("oneOut")
 const twoOut = document.getElementById("twoOut")
 const threeOut = document.getElementById("threeOut")
@@ -30,7 +28,7 @@ let balance = 100
 
 let lastTry = false
 
-//TODO: Bet Amount And Buttons
+//! Bet Amount And Buttons
 
 const betAmntBtn = (betIn) => {
   betAmnt = betIn
@@ -56,7 +54,7 @@ const winAnimation = (max, min, speed, time) => {
 
     w += dir * speed
 
-    document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`
+    document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6 absolute`
   }, 30);
   setTimeout(() => {
     clearInterval(winAnim)
@@ -66,7 +64,7 @@ const winAnimation = (max, min, speed, time) => {
         w += dir * speed
       } else { clearInterval(closingAnim) }
 
-      document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`
+      document.getElementById("peta").classList = `w-${w} rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6 absolute`
     }, 30);
   }, time);
 }
@@ -123,9 +121,9 @@ const slots = () => {
     //! BigWin
     if (numOne == 0 && numTwo == 0 && numThree == 0) {
       bigwin = true
-    } else if (numOne == 2 && numTwo == 2 && numThree == 2) {
+    } else if ((numOne == 2 && numTwo == 2 && numThree == 2) || (numOne == 1 && numTwo == 1 && numThree == 1)) {
       smallwin = true
-    } else if ((numOne == 2 && numThree == 2) || (numOne == 2 && numTwo == 2) || (numTwo == 2 && numThree == 2)) {
+    } else if ((numOne == 8 && numTwo == 8 && numThree == 8) || (numOne == 2 && numThree == 2)) {
       tinywin = true
     } else {
       bigwin = false
@@ -186,10 +184,7 @@ const slots = () => {
     }
 
 
-  } else {
-    alert("You don't have enough money for this bet!")
   }
-
   console.log(8);
   
 
@@ -213,11 +208,11 @@ const slots = () => {
       let direction = 1;
 
       const win100Anim = setInterval(() => {
-        if (w >= 600) direction = -5;
-        if (w <= 80) direction = 5;
+        if (w >= 1000) direction = -10;
+        if (w <= 80) direction = 10;
 
         w += direction;
-        document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
+        document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6 absolute`;
       }, 10)
       setTimeout(() => {
         clearInterval(win100Anim)
@@ -227,7 +222,7 @@ const slots = () => {
           } else {
             clearInterval(win100Closing)
           }
-          document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6`;
+          document.getElementById("peta").classList = `w-[${w}px] rounded-full animate-[spin_2s_linear_infinite] border-blue-500 border-6 absolute`;
         }, 10);
       }, 10000)
     }
@@ -279,7 +274,7 @@ const autoSpin = () => {
 
         if (bigwin || smallwin || tinywin) {
           pauseTime = 5000
-          if(betAmnt == 100) pauseTime = 10000
+          if(betAmnt == 100) pauseTime = 11000
         }
 
         setTimeout(spin, pauseTime)
