@@ -121,9 +121,9 @@ const slots = () => {
     //! BigWin
     if (numOne == 0 && numTwo == 0 && numThree == 0) {
       bigwin = true
-    } else if ((numOne == 2 && numTwo == 2 && numThree == 2) || (numOne == 1 && numTwo == 1 && numThree == 1)) {
+    } else if ((numOne == 2 && numTwo == 2 && numThree == 2) || (numOne == 1 && numTwo == 1 && numThree == 1) || (numOne == 2 && numThree == 2) || (numOne == 3 && numTwo == 3 && numThree == 3)) {
       smallwin = true
-    } else if ((numOne == 8 && numTwo == 8 && numThree == 8) || (numOne == 2 && numThree == 2)) {
+    } else if ((numOne == 8 && numTwo == 8 && numThree == 8) || (numOne == 2 && numTwo == 2) || (numTwo == 2 && numThree == 2) || (numOne == 3 && numTwo == 3) || (numTwo == 3 && numThree == 3) || (numOne == 3 && numThree == 3)) {
       tinywin = true
     } else {
       bigwin = false
