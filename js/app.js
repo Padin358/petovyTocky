@@ -295,12 +295,12 @@ const submitCode = () => {
   codeIn = document.getElementById('code').value
 
   if (codeIn === code1 || codeIn === code2 || codeIn === code3 || codeIn === code4) {
-    alert("Congratulations! You entered the correct code!\n\nYou're now getting $300!")
+    alert("Congratulations! You entered the correct code!\n\nYou're now getting $100!")
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 100
   } else if (codeIn === code5 || codeIn === code6 || codeIn === code7 || codeIn === code8) {
-    alert("Congratulations! You entered the correct code!\n\nYou're now getting $300!")
+    alert("Congratulations! You entered the correct code!\n\nYou're now getting $200!")
     document.getElementById('code').value = ''
     document.getElementById('btn').disabled = false
     balance += 200
