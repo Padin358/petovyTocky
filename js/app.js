@@ -270,7 +270,7 @@ const autoSpin = () => {
           return
         }
 
-        let pauseTime = 100
+        let pauseTime = 300
 
         if (bigwin || smallwin || tinywin) {
           pauseTime = 5000
