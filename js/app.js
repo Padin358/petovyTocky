@@ -232,15 +232,15 @@ const slots = () => {
   
 
   if (bigwin || smallwin || tinywin) {
-    document.getElementById("gameBox").classList = "bg-green-500 q-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-150"
-    document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-green-700 mt-5 rounded-2xl mx-8 text-3xl"
+    document.getElementById("gameBox").classList = "bg-green-500 q-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-100 lg:scale-150"
+    document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-green-700 mt-5 rounded-2xl mx-0 text-3xl"
     setTimeout(() => {
-      document.getElementById("gameBox").classList = "bg-blue-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-150"
-      document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-8 text-3xl"
+      document.getElementById("gameBox").classList = "bg-blue-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-100 lg:scale-150"
+      document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-blue-700 mt-5 rounded-2xl mx-0 text-3xl"
     }, 3000);
   } else {
-    document.getElementById("gameBox").classList = "bg-red-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-150"
-    document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-red-700 mt-5 rounded-2xl mx-8 text-3xl"
+    document.getElementById("gameBox").classList = "bg-red-500 w-full lg:w-92 mx-auto lg:rounded-3xl p-5 text-gray-100 scale-100 lg:scale-150"
+    document.getElementById("gameNums").classList = "flex flex-wrap flex-row justify-center font-semibold bg-red-700 mt-5 rounded-2xl mx-0 text-3xl"
   }
   document.getElementById('balance').innerHTML = `Balance: ${balance}$`
 }
